@@ -10,14 +10,28 @@ $(document).ready(function() {
 
 
 
-    $('form').on('submit', function(e){
+    $('form').on('submit', function(e) {
         e.preventDefault();
 
+        // Obter o valor da nova tarefa do campo de entrada
         const novaTarefa = $('#tarefa-acrescentada').val();
-        const novoItem = ('<li></li.')
-        $(`${novaTarefa}`).appendTo(novoItem);
 
-        $(novoItem.appendTo('ul'));
+        // Criar um novo item de lista com a nova tarefa
+        const novoItem = $('<li></li').text(novaTarefa);
+
+        // Adicionar o novo item à lista 
+        $('ul').append(novoItem);
+
+        // Ou pode ser dessa forma aqui:
+        //$(novoItem).appendTo('ul');
+
+        // Limpar o campo de entrada após adicionar a tarfa
+        $('#tarefa-acrescentada').val('')
+
+        
+
+
+
 
     })
 
